@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Pendaftaran Mahasiswa Baru</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      form {
+        width: 300px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      .error {
+        color: red;
+        font-size: 12px;
+      }
+
+      input[type="submit"] {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Form Pendaftaran Mahasiswa Baru</h2>
+    <form
+      id="registrationForm"
+      method="POST"
+      action="process.php"
+      onsubmit="return validateForm()"
+    >
+      <div>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+        <span id="namaError" class="error"></span>
+      </div>
+
+      <div>
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required />
+        <span id="alamatError" class="error"></span>
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <span id="emailError" class="error"></span>
+      </div>
+
+      <div>
+        <label for="telepon">No Telepon:</label>
+        <input type="tel" id="telepon" name="telepon" required />
+        <span id="teleponError" class="error"></span>
+      </div>
+
+      <div>
+        <label for="jenisKelamin">Jenis Kelamin:</label>
+        <select id="jenisKelamin" name="jenisKelamin" required>
+          <option value="">-- Pilih Jenis Kelamin --</option>
+          <option value="laki-laki">Laki-laki</option>
+          <option value="perempuan">Perempuan</option>
+        </select>
+        <span id="jenisKelaminError" class="error"></span>
+      </div>
+
+      <div>
+        <input type="submit" value="Daftar" />
+      </div>
+    </form>
+
+    <script>
+      function validateForm() {
+        var nama = document.getElementById("nama").value;
+        var alamat = document.getElementById("alamat").value;
+        var email = document.getElementById("email").value;
+        var telepon = document.getElementById("telepon").value;
+        var jenisKelamin = document.getElementById("jenisKelamin").value;
+        var isValid = true;
+
+        // Reset error messages
+        document.getElementById("namaError").innerHTML = "";
+        document.getElementById("alamatError").innerHTML = "";
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("teleponError").innerHTML = "";
+        document.getElementById("jenisKelaminError").innerHTML = "";
+
+        if (nama === "") {
+          document.getElementById("namaError").innerHTML = "Nama harus diisi";
+          isValid = false;
+        }
+
+        if (alamat === "") {
+          document.getElementById("alamatError").innerHTML =
+            "Alamat harus diisi";
+          isValid = false;
+        }
+
+        if (email === "") {
+          document.getElementById("emailError").innerHTML = "Email harus diisi";
+          isValid = false;
+        }
+
+        if (telepon === "") {
+          document.getElementById("teleponError").innerHTML =
+            "No Telepon harus diisi";
+          isValid = false;
+        }
+
+        if (jenisKelamin === "") {
+          document.getElementById("jenisKelaminError").innerHTML =
+            "Jenis Kelamin harus dipilih";
+          isValid = false;
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
