@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <form method="GET" action="index.html" id="form">
+          <h2>DATA IDENTITAS</h2>
+          <hr />
+          <label>Nama : </label>
+          <input type="text" name="fnama" id="fnama" />
+
+          <label>Alamat : </label>
+          <input type="text" name="lalamat" id="lalamat" />
+
+          <!-- kode program modul 6 mulai di baris ini -->
+          <p>
+            <label> Jenis Kelamin : </label>
+            <input type="radio" name="jkel" value="Laki-laki" />Laki-laki
+            <input type="radio" name="jkel" value="Perempuan" />Perempuan
+          </p>
+
+          <p>
+            <label> Program Studi </label>
+            <select name="prodi">
+              <option value="SI">SI</option>
+              <option value="TI">TI</option>
+              <option value="TK">TK</option>
+              <option value="KA">KA</option>
+              <option value="MI">MI</option>
+            </select>
+          </p>
+
+          <p>
+            <label>Hobi</label>
+            <input type="checkbox" name="cekhobi[]" value="Menyanyi" />
+            <label for="chkSing">Menyanyi</label>
+            <input type="checkbox" name="cekhobi[]" value="Menyanyi" />
+            <label for="cekhobi">Olahraga</label>
+          </p>
+          <!-- baris akhir modifikasi -->
+
+          <p>
+            <label for="comment">Komentar:</label>
+            <textarea id="comment" name="comment" rows="4" cols="35"></textarea>
+          </p>
+
+          <input type="submit" name="submit" id="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

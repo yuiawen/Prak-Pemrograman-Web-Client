@@ -1,0 +1,21 @@
+table{
+    font-family: Arial;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color:yellow;}
+tr:hove{background-color: Red;}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: green;
+    color: white;
+}
+
